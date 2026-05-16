@@ -302,6 +302,7 @@
   <!-- ============ TABS ============ -->
   <nav class="tabs" role="tablist">
     <button class="tab-btn active" data-target="about">About</button>
+    <button class="tab-btn" data-target="research">Research</button>
     <button class="tab-btn" data-target="publications">Publications</button>
     <button class="tab-btn" data-target="experience">Experience</button>
     <button class="tab-btn" data-target="teaching">Teaching</button>
@@ -339,9 +340,47 @@
     </p>
   </section>
 
+  <!-- ============ RESEARCH ============ -->
+  <section class="page" id="research">
+    <h2>Research</h2>
+    <p>
+      The power grid was not built with data centers like today's in mind.
+      Driven by AI, a single new facility can draw hundreds of megawatts —
+      comparable to a small city — and many are being planned faster than
+      transmission lines can be built to serve them. My work asks a simple
+      question: instead of treating these loads as a fixed burden, can we
+      take advantage of the fact that computational work is, in many ways,
+      flexible — and use that flexibility to help the grid run better?
+    </p>
+    <p>
+      A lot of computing tasks do not strictly need to happen at a specific
+      time, or in a specific place. AI training jobs can often be paused, or
+      shifted between data centers in different regions. I have been studying
+      what happens if the grid operator's day-ahead unit commitment model is
+      allowed to plan around this flexibility — both in time and across
+      locations. In our test cases on the IEEE 24- and 73-bus systems, this
+      can meaningfully relieve transmission congestion and reduce the amount
+      of wind and solar energy that has to be curtailed.
+    </p>
+    <p>
+      A related question is one of planning rather than operation: if we know
+      large data centers are coming, where can the existing grid actually host
+      them, and what new transmission or generation needs to be built? I am
+      working on hosting capacity analysis under N-1 security constraints to
+      identify the bottlenecks, and on joint transmission-and-generation
+      expansion models that consider data center growth from the start. I find
+      this an exciting area to be working in, and there is still much I want
+      to learn.
+    </p>
+  </section>
+
   <!-- ============ PUBLICATIONS ============ -->
   <section class="page" id="publications">
     <h2>Publications</h2>
+
+    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:0; margin-bottom:6px; font-weight:400;">
+      Accepted
+    </h2>
 
     <div class="pub">
       <div class="ptitle">
@@ -353,7 +392,7 @@
         <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
       </div>
       <div class="pvenue">
-        Accepted, IEEE Industry Applications Society (IAS) Annual Meeting, 2026.
+        IEEE Industry Applications Society (IAS) Annual Meeting, 2026.
       </div>
     </div>
 
@@ -367,9 +406,42 @@
         <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
       </div>
       <div class="pvenue">
-        Accepted, IEEE PES General Meeting (PESGM), 2026.
+        IEEE PES General Meeting (PESGM), 2026.
       </div>
       <a class="ptag" href="https://arxiv.org/abs/2511.08759">arXiv:2511.08759</a>
+    </div>
+
+    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
+      In Preparation
+    </h2>
+
+    <div class="pub">
+      <div class="ptitle">
+        Contingency-Constrained Hosting Capacity Assessment for Large-Load
+        Interconnection on the IEEE 24-Bus System
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span>,
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>, and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        In preparation, 2026.
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="ptitle">
+        Co-optimization of Transmission and Generation Expansion Planning with
+        Embedded Unit Commitment under Data Center Load Growth
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span> and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        In preparation, 2026.
+      </div>
     </div>
   </section>
 
