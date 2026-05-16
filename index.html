@@ -40,6 +40,32 @@
   /* ===== Header (persistent) ===== */
   header.site{
     margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: 1fr 140px;
+    gap: 32px;
+    align-items: start;
+  }
+  header.site .text-block{
+    min-width: 0;
+  }
+  header.site .portrait{
+    width: 140px;
+    height: 175px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f0f0ee;
+    flex-shrink: 0;
+  }
+  header.site .portrait img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(0%);
+    transition: filter .4s;
+  }
+  header.site .portrait:hover img{
+    filter: grayscale(0%);
   }
   header.site .name{
     font-size: 28px;
@@ -273,6 +299,16 @@
 
   @media (max-width: 600px){
     .wrap{ padding: 48px 22px 48px; }
+    header.site{
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    header.site .portrait{
+      order: -1;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+    }
     .contact-list li, .skills li{
       grid-template-columns: 1fr;
       gap: 2px;
@@ -289,13 +325,18 @@
 
   <!-- ============ HEADER ============ -->
   <header class="site">
-    <h1 class="name">Haoxiang Wan</h1>
-    <div class="han">万浩翔</div>
-    <div class="role">
-      Ph.D. student in Electrical and Computer Engineering<br>
-      <a href="https://www.ece.uh.edu/">University of Houston</a> ·
-      <a href="https://rpglab.github.io/">Renewable Power Grid Lab</a><br>
-      Advised by <a href="https://rpglab.github.io/people/Xingpeng-Li/">Prof. Xingpeng Li</a>
+    <div class="text-block">
+      <h1 class="name">Haoxiang Wan</h1>
+      <div class="han">万浩翔</div>
+      <div class="role">
+        Ph.D. student in Electrical and Computer Engineering<br>
+        <a href="https://www.ece.uh.edu/">University of Houston</a> ·
+        <a href="https://rpglab.github.io/">Renewable Power Grid Lab</a><br>
+        Advised by <a href="https://rpglab.github.io/people/Xingpeng-Li/">Prof. Xingpeng Li</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <img src="portrait.jpg" alt="Haoxiang Wan">
     </div>
   </header>
 
