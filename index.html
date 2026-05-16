@@ -1,350 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haoxiang WAN - Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #e1ecf4;
-            --text-color: #333;
-            --light-text: #666;
-            --border-color: #e5e7eb;
-            --background: #f9fafb;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background);
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 40px;
-            text-align: center;
-            position: relative;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
-        
-        .contact-info {
-            margin-bottom: 8px;
-            font-size: 1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-        }
-        
-        .contact-info i {
-            margin-right: 8px;
-        }
-        
-        .main-content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 35px;
-        }
-        
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 80px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-        
-        .education-item, .experience-item {
-            margin-bottom: 25px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .education-item::before, .experience-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-        }
-        
-        .education-item h3, .experience-item h3 {
-            margin-bottom: 8px;
-            color: #222;
-            font-size: 1.2rem;
-        }
-        
-        .date {
-            color: var(--light-text);
-            font-style: italic;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-        }
-        
-        .date i {
-            margin-right: 8px;
-            color: var(--primary-color);
-        }
-        
-        ul {
-            list-style-type: none;
-            margin-left: 5px;
-        }
-        
-        li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-        
-        .skills ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-left: 0;
-        }
-        
-        .skills li {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            padding-left: 15px;
-        }
-        
-        .skills li::before {
-            content: none;
-        }
-        
-        .skills li:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        strong {
-            color: #222;
-        }
-        
-        .download-section {
-            text-align: center;
-            margin-top: 40px;
-            padding-bottom: 20px;
-        }
-        
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
-        }
-        
-        .download-btn i {
-            margin-right: 10px;
-        }
-        
-        .download-btn:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 10px rgba(37, 99, 235, 0.3);
-        }
-        
-        footer {
-            background-color: #f3f4f6;
-            padding: 20px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--light-text);
-            border-top: 1px solid var(--border-color);
-        }
-        
-        @media (max-width: 768px) {
-            header, .main-content {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Haoxiang Wan</title>
+<meta name="description" content="Haoxiang Wan — Ph.D. student in Electrical and Computer Engineering at the University of Houston." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #ffffff;
+    --ink:       #1c1c1c;
+    --ink-soft:  #444;
+    --ink-mute:  #888;
+    --rule:      #e8e8e6;
+    --accent:    #8a3324;
+    --link:      #8a3324;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 32px 64px;
+  }
+
+  /* ===== Header (persistent) ===== */
+  header.site{
+    margin-bottom: 48px;
+  }
+  header.site .name{
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  header.site .han{
+    color: var(--ink-mute);
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  header.site .role{
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* ===== Nav (page switcher) ===== */
+  nav.tabs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 40px;
+  }
+  nav.tabs button{
+    background: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding: 14px 18px 14px 0;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: color .2s;
+    position: relative;
+  }
+  nav.tabs button:hover{ color: var(--ink); }
+  nav.tabs button.active{
+    color: var(--accent);
+    font-weight: 500;
+  }
+  nav.tabs button.active::after{
+    content: "";
+    position: absolute;
+    bottom: -1px; left: 0;
+    width: calc(100% - 26px);
+    height: 1px;
+    background: var(--accent);
+  }
+
+  /* ===== Pages ===== */
+  .page{
+    display: none;
+    animation: fade .35s ease-out;
+  }
+  .page.active{
+    display: block;
+  }
+  @keyframes fade{
+    from{ opacity: 0; transform: translateY(4px); }
+    to  { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== Links (all names + everywhere) ===== */
+  a{
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(138, 51, 36, 0.25);
+    transition: border-color .15s, color .15s;
+  }
+  a:hover{
+    border-bottom-color: var(--accent);
+  }
+
+  /* ===== Typography in pages ===== */
+  .page h2{
+    font-family: 'Source Serif 4', serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 18px;
+    letter-spacing: -0.005em;
+  }
+  .page p{
+    margin: 0 0 16px;
+    color: var(--ink-soft);
+  }
+  .page p strong{
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ===== Entry rows (used on each page) ===== */
+  .row{
+    padding: 18px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .row:last-child{ border-bottom: 1px solid var(--rule); }
+  .row .when{
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .row .title{
+    font-size: 17px;
+    color: var(--ink);
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .row .sub{
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    font-style: italic;
+    margin-bottom: 6px;
+  }
+  .row .note{
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    margin-top: 4px;
+  }
+
+  /* ===== Publications ===== */
+  .pub{
+    padding: 20px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .pub:last-child{ border-bottom: 1px solid var(--rule); }
+  .pub .ptitle{
+    font-size: 17px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .pub .pauthors{
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    margin-bottom: 4px;
+  }
+  .pub .pauthors .me{
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .pub .pvenue{
+    color: var(--ink-mute);
+    font-style: italic;
+    font-size: 14.5px;
+  }
+  .pub .ptag{
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 8px;
+    margin-right: 8px;
+    border: none;
+    border-bottom: 1px solid rgba(138, 51, 36, 0.3);
+    padding-bottom: 1px;
+  }
+
+  /* ===== Contact ===== */
+  .contact-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .contact-list li{
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    font-size: 16px;
+  }
+  .contact-list li:last-child{ border-bottom: 1px solid var(--rule); }
+  .contact-list li .lbl{
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    padding-top: 4px;
+  }
+
+  /* ===== Skills (clean key-val) ===== */
+  .skills{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .skills li{
+    padding: 12px 0;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 16px;
+    font-size: 15.5px;
+  }
+  .skills li:last-child{ border-bottom: 1px solid var(--rule); }
+  .skills li .k{
+    color: var(--ink-mute);
+    font-style: italic;
+  }
+  .skills li .v{
+    color: var(--ink-soft);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    margin-top: 56px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 600px){
+    .wrap{ padding: 48px 22px 48px; }
+    .contact-list li, .skills li{
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+    nav.tabs button{
+      padding: 12px 12px 12px 0;
+      font-size: 11px;
+    }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Haoxiang WAN</h1>
-            <div class="contact-info">
-                <i class="fas fa-map-marker-alt"></i> 209 E University Ave, Champaign, IL, United States, 61820
-            </div>
-            <div class="contact-info">
-                <i class="fas fa-phone"></i> +1 (217) 721-6546 &nbsp;|&nbsp; <i class="fas fa-envelope"></i> wan29@illinois.edu
-            </div>
-        </header>
+<div class="wrap">
 
-        <div class="main-content">
-            <section class="section">
-                <h2>EDUCATION</h2>
-                <div class="education-item">
-                    <h3>University of Houston, Houston, TX, USA</h3>
-                    <div class="date"><i class="far fa-calendar-alt"></i> August 2025 - May 2029 (Expected)</div>
-                    <p>Ph.D. in Electrical Engineering</p>
-                    <p>Advisor: Prof. Xingpeng Li</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3>University of Illinois at Urbana-Champaign, Urbana, IL, USA</h3>
-                    <div class="date"><i class="far fa-calendar-alt"></i> August 2024 - May 2025</div>
-                    <p>Master of Engineering in Energy Systems</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3>The University of Sheffield, Sheffield, UK</h3>
-                    <div class="date"><i class="far fa-calendar-alt"></i> September 2022 - June 2024</div>
-                    <p>Bachelor of Engineering in Electrical and Electronic Engineering (First Class Honours)</p>
-                </div>
-                
-                <div class="education-item">
-                    <h3>The Northern Consortium of UK Universities, China</h3>
-                    <div class="date"><i class="far fa-calendar-alt"></i> September 2020 - June 2022</div>
-                    <p>Foundation Studies in Electrical and Electronic Engineering</p>
-                    <p>GPA: 77/100</p>
-                </div>
-            </section>
+  <!-- ============ HEADER ============ -->
+  <header class="site">
+    <h1 class="name">Haoxiang Wan</h1>
+    <div class="han">万昊翔</div>
+    <div class="role">
+      Ph.D. student in Electrical and Computer Engineering<br>
+      <a href="https://www.ece.uh.edu/">University of Houston</a> ·
+      <a href="https://rpglab.github.io/">Renewable Power Grid Lab</a><br>
+      Advised by <a href="https://www.ece.uh.edu/faculty/li">Prof. Xingpeng Li</a>
+    </div>
+  </header>
 
-            <section class="section">
-                <h2>RESEARCH EXPERIENCE</h2>
-                <div class="experience-item">
-                    <h3>Traffic Signal Control System Using a Microcontroller</h3>
-                    <div class="date"><i class="far fa-user"></i> Supervised by Dr. Kennedy Offor | <i class="far fa-calendar-alt"></i> 09/2023-06/2024</div>
-                    <p><strong>Background:</strong> Developed a traffic management system using embedded design and Microcontroller-based control, programmed in C, to optimize urban traffic flow. The system featured an emergency lane protocol and dynamic signal modulation based on real-time data. Simulations were initially conducted to validate the control logic and optimize system parameters. After successful validation, a custom four-layer PCB was designed, integrating sensors and communication modules to meet performance and functionality requirements. The microcontroller was programmed and flashed to manage system operations.</p>
-                    <p><strong>Result:</strong> The system improved traffic flow efficiency, reduced congestion, and ensured rapid emergency vehicle clearance, contributing to enhanced public safety. Dynamic signal control minimized intersection wait times, promoting smarter urban mobility and supporting sustainable city development.</p>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Dual-Level Access Control System with Power Backup for Door Lock Management</h3>
-                    <div class="date"><i class="far fa-user"></i> Supervised by Dr. Luke Seed | <i class="far fa-calendar-alt"></i> 02/2023-06/2023</div>
-                    <p><strong>Background:</strong> Developed a dual-level access control system using the MKL46Z CPU, designed for secure door-lock management. The system features two access levels, with flash memory for retaining access codes after power loss and a backup power supply to ensure 30 minutes of operation during outages. The software was implemented in C++ for efficient password management and system control.</p>
-                    <p><strong>Result:</strong> The system met all key objectives, with the dual-level access and password management functioning as designed. The implementation of flash memory ensured passwords were securely retained after power shutdown. The power backup system exceeded expectations, operating for 180 minutes during outages.</p>
-                </div>
-            </section>
+  <!-- ============ TABS ============ -->
+  <nav class="tabs" role="tablist">
+    <button class="tab-btn active" data-target="about">About</button>
+    <button class="tab-btn" data-target="publications">Publications</button>
+    <button class="tab-btn" data-target="experience">Experience</button>
+    <button class="tab-btn" data-target="teaching">Teaching</button>
+    <button class="tab-btn" data-target="cv">CV</button>
+    <button class="tab-btn" data-target="contact">Contact</button>
+  </nav>
 
-            <section class="section">
-                <h2>PROFESSIONAL EXPERIENCE</h2>
-                <div class="experience-item">
-                    <h3>Jiangxi Engineering Research Center of High-Power Electronics and Grid Smart Metering</h3>
-                    <div class="date"><i class="fas fa-briefcase"></i> Intern | <i class="far fa-calendar-alt"></i> 06/2023-08/2023</div>
-                    <ul>
-                        <li>Contributed to designing a specialized current detection device for power grid leakage identification.</li>
-                        <li>Participated in multiple simulation experiments to validate the device's reliability under various conditions; utilised MATLAB for modelling and simulation.</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>Jiangxi Branch of China Comservice Supply Chain Management Co., Ltd.</h3>
-                    <div class="date"><i class="fas fa-briefcase"></i> Engineering Assistant | <i class="far fa-calendar-alt"></i> 08/02/2021-08/31/2021</div>
-                    <ul>
-                        <li>Involved in the maintenance and surveillance of Hikvision monitors, including diagnosing malfunctions, devising targeted repair strategies, and executing hands-on maintenance tasks to restore monitors to optimal functioning.</li>
-                        <li>Actively engaged in the troubleshooting process; applied expertise in electronic circuitry and signal processing to pinpoint the root causes of issues, which in turn informed tailored repair plans for each monitor.</li>
-                    </ul>
-                </div>
-            </section>
+  <!-- ============ ABOUT ============ -->
+  <section class="page active" id="about">
+    <p>
+      I am a Ph.D. student in Electrical and Computer Engineering at the
+      <a href="https://www.uh.edu/">University of Houston</a>, working with
+      <a href="https://www.ece.uh.edu/faculty/li">Prof. Xingpeng Li</a> in the
+      <a href="https://rpglab.github.io/">Renewable Power Grid (RPG) Laboratory</a>.
+    </p>
+    <p>
+      My research focuses on <strong>power system operations and optimization</strong>,
+      with a particular interest in how the flexibility of large-scale
+      <strong>data center loads</strong> can be integrated into modern electric grids
+      to relieve transmission congestion, reduce renewable curtailment,
+      and improve overall reliability.
+    </p>
+    <p>
+      Before joining UH, I received my M.Eng. in Energy Systems from the
+      <a href="https://illinois.edu/">University of Illinois at Urbana-Champaign</a>,
+      and my B.Eng. (First Class Honours) in Electrical and Electronic Engineering
+      from the <a href="https://www.sheffield.ac.uk/">University of Sheffield</a>.
+    </p>
+    <p>
+      In summer 2026 I am a Research Aide at
+      <a href="https://www.anl.gov/">Argonne National Laboratory</a>, working with
+      <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>
+      on data center load integration into ERCOT-scale transmission modeling.
+    </p>
+  </section>
 
-            <section class="section skills">
-                <h2>TECHNICAL SKILLS</h2>
-                <ul>
-                    <li><i class="fas fa-code"></i> MATLAB</li>
-                    <li><i class="fas fa-code"></i> C</li>
-                    <li><i class="fas fa-code"></i> C++</li>
-                </ul>
-            </section>
+  <!-- ============ PUBLICATIONS ============ -->
+  <section class="page" id="publications">
+    <h2>Publications</h2>
 
-            <section class="section">
-                <h2>HONORS AND AWARDS</h2>
-                <div class="experience-item">
-                    <h3>2022-2023 Academic Year</h3>
-                    <ul>
-                        <li>Awarded Engineering Excellence Scholarships of The University of Sheffield</li>
-                        <li>Awarded NCUK Sheffield Scholarship of The University of Sheffield</li>
-                    </ul>
-                </div>
-                
-                <div class="experience-item">
-                    <h3>2021-2022 Academic Year</h3>
-                    <ul>
-                        <li>Awarded Engineering Excellence Scholarships of The University of Sheffield</li>
-                        <li>Awarded NCUK Sheffield Scholarship of The University of Sheffield</li>
-                    </ul>
-                </div>
-            </section>
-
-            <div class="download-section">
-                <a href="Resume.pdf" class="download-btn" download><i class="fas fa-download"></i> Download PDF Version</a>
-            </div>
-        </div>
+    <div class="pub">
+      <div class="ptitle">
+        Data Center Spatio-Temporal Load Flexibility in Security-Constrained
+        Unit Commitment for Enhanced Grid Efficiency and Reliability
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span> and
+        <a href="https://www.ece.uh.edu/faculty/li">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        Accepted, IEEE Industry Applications Society (IAS) Annual Meeting, 2026.
+      </div>
     </div>
 
-    <footer>
-        <p>© 2025 Haoxiang WAN. Last updated: April 2025</p>
-    </footer>
+    <div class="pub">
+      <div class="ptitle">
+        Grid Operational Benefit Analysis of Data Center Spatial Flexibility:
+        Congestion Relief, Renewable Energy Curtailment Reduction, and Cost Saving
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span>, Linhan Fang, and
+        <a href="https://www.ece.uh.edu/faculty/li">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        Accepted, IEEE PES General Meeting (PESGM), 2026.
+      </div>
+      <a class="ptag" href="https://arxiv.org/abs/2511.08759">arXiv:2511.08759</a>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section class="page" id="experience">
+    <h2>Research &amp; Professional Experience</h2>
+
+    <div class="row">
+      <div class="when">May 2026 — Aug 2026</div>
+      <div class="title">Research Aide (Summer Internship)</div>
+      <div class="sub">
+        <a href="https://www.anl.gov/">Argonne National Laboratory</a>,
+        Energy Systems and Infrastructure Analysis Division
+      </div>
+      <div class="note">
+        Supervisor:
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>.
+        Modeling large-scale data center load integration on the ERCOT
+        transmission network; developing optimization frameworks to assess
+        hosting capacity for hyperscale data center deployment in Texas.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">Aug 2025 — Present</div>
+      <div class="title">Graduate Research Assistant</div>
+      <div class="sub">
+        <a href="https://rpglab.github.io/">Renewable Power Grid Laboratory</a>,
+        University of Houston
+      </div>
+      <div class="note">
+        Advisor: <a href="https://www.ece.uh.edu/faculty/li">Prof. Xingpeng Li</a>.
+        Developing SCUC models that integrate spatial and temporal data center
+        load flexibility; contingency-constrained hosting capacity analysis on
+        IEEE test systems; machine-learning models for LMP and congestion
+        forecasting in collaboration with Dow.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">Sept 2023 — June 2024</div>
+      <div class="title">Undergraduate Capstone Project</div>
+      <div class="sub">
+        <a href="https://www.sheffield.ac.uk/">University of Sheffield</a>
+      </div>
+      <div class="note">
+        Supervisor: Dr. Kennedy Offor. Designed a microcontroller-based traffic
+        signal control system in C; built a custom four-layer PCB with sensor
+        arrays and wireless communication modules.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TEACHING ============ -->
+  <section class="page" id="teaching">
+    <h2>Teaching</h2>
+
+    <div class="row">
+      <div class="when">Jan 2026 — May 2026</div>
+      <div class="title">
+        <a href="https://www.ece.uh.edu/">ECE 5380</a> — Power Electronics &amp; Electric Drives
+      </div>
+      <div class="sub">Graduate Teaching Assistant · University of Houston</div>
+      <div class="note">
+        Instructor: <a href="https://www.ece.uh.edu/faculty/huang">Dr. Hao Huang</a>.
+        Synchronous online graduate course covering power semiconductor devices,
+        converters and inverters, DC / induction / synchronous motor drives,
+        harmonics, and filtering.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">Aug 2025 — Dec 2025</div>
+      <div class="title">
+        <a href="https://www.ece.uh.edu/">ECE 5388</a> — Renewable Energy Technology
+      </div>
+      <div class="sub">Graduate Teaching Assistant · University of Houston</div>
+      <div class="note">
+        Instructor: <a href="https://www.ece.uh.edu/faculty/huang">Dr. Hao Huang</a>.
+        Assisted with instruction and assessment for a course covering solar,
+        wind, and grid integration of renewable resources.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CV / EDUCATION + SKILLS ============ -->
+  <section class="page" id="cv">
+    <h2>Education</h2>
+
+    <div class="row">
+      <div class="when">Aug 2025 — Present</div>
+      <div class="title">
+        Ph.D., Electrical and Computer Engineering
+      </div>
+      <div class="sub">
+        <a href="https://www.uh.edu/">University of Houston</a>
+      </div>
+      <div class="note">
+        Advisor: <a href="https://www.ece.uh.edu/faculty/li">Prof. Xingpeng Li</a>
+        · <a href="https://rpglab.github.io/">Renewable Power Grid Laboratory</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">May 2025</div>
+      <div class="title">M.Eng., Energy Systems</div>
+      <div class="sub">
+        <a href="https://illinois.edu/">University of Illinois at Urbana-Champaign</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="when">June 2024</div>
+      <div class="title">
+        B.Eng., Electrical and Electronic Engineering · First Class Honours
+      </div>
+      <div class="sub">
+        <a href="https://www.sheffield.ac.uk/">The University of Sheffield</a>
+      </div>
+    </div>
+
+    <h2 style="margin-top:40px;">Technical Skills</h2>
+    <ul class="skills">
+      <li><span class="k">Programming</span><span class="v">Python, MATLAB, C, C++</span></li>
+      <li><span class="k">Optimization</span><span class="v">Pyomo, AMPL, Gurobi</span></li>
+      <li><span class="k">Power System Tools</span><span class="v">MATLAB / Simulink, LTspice</span></li>
+      <li><span class="k">Machine Learning</span><span class="v">PyTorch, scikit-learn, pandas, NumPy</span></li>
+      <li><span class="k">Other</span><span class="v">LaTeX, Linux / HPC</span></li>
+      <li><span class="k">Languages</span><span class="v">English (fluent), Mandarin Chinese (native)</span></li>
+    </ul>
+
+    <h2 style="margin-top:40px;">Honors</h2>
+    <ul class="skills">
+      <li>
+        <span class="k">2021–23</span>
+        <span class="v">
+          Engineering Excellence Scholarship,
+          <a href="https://www.sheffield.ac.uk/">University of Sheffield</a>
+        </span>
+      </li>
+      <li>
+        <span class="k">2021–23</span>
+        <span class="v">
+          NCUK Sheffield Scholarship,
+          <a href="https://www.sheffield.ac.uk/">University of Sheffield</a>
+        </span>
+      </li>
+    </ul>
+
+    <p style="margin-top: 28px;">
+      A full CV is available <a href="Resume.pdf">here (PDF)</a>.
+    </p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="page" id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li>
+        <span class="lbl">Email</span>
+        <span><a href="mailto:hwan7@uh.edu">hwan7@uh.edu</a></span>
+      </li>
+      <li>
+        <span class="lbl">Office</span>
+        <span>
+          <a href="https://www.ece.uh.edu/">Department of Electrical and Computer Engineering</a><br>
+          <a href="https://www.uh.edu/">University of Houston</a>, Houston, TX
+        </span>
+      </li>
+      <li>
+        <span class="lbl">CV</span>
+        <span><a href="Resume.pdf">Resume.pdf</a></span>
+      </li>
+      <li>
+        <span class="lbl">GitHub</span>
+        <span><a href="https://github.com/HaoxiangWan25">HaoxiangWan25</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <span>© Haoxiang Wan</span>
+    <span>Last updated May 2026</span>
+  </footer>
+
+</div>
+
+<script>
+  const tabs  = document.querySelectorAll('.tab-btn');
+  const pages = document.querySelectorAll('.page');
+
+  function show(id){
+    tabs.forEach(t  => t.classList.toggle('active', t.dataset.target === id));
+    pages.forEach(p => p.classList.toggle('active', p.id === id));
+    history.replaceState(null, '', '#' + id);
+  }
+
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.target)));
+
+  const initial = window.location.hash.replace('#','');
+  if (initial && document.getElementById(initial)) show(initial);
+</script>
 </body>
 </html>
