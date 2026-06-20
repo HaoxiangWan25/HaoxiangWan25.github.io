@@ -366,10 +366,12 @@
       from the <a href="https://www.sheffield.ac.uk/">University of Sheffield</a>.
     </p>
     <p>
-      In summer 2026, I will have the privilege of joining
-      <a href="https://www.anl.gov/">Argonne National Laboratory</a> as a
-      summer research intern, where I look forward to learning from
-      <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>.
+      This summer I am a research intern at
+      <a href="https://www.anl.gov/">Argonne National Laboratory</a>,
+      working with
+      <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>
+      on GPU-accelerated power system optimization and large-scale data center
+      integration studies on the ERCOT network.
     </p>
   </section>
 
@@ -398,12 +400,15 @@
     <p>
       A related question is one of planning rather than operation: if we know
       large data centers are coming, where can the existing grid actually host
-      them, and what new transmission or generation needs to be built? I am
-      working on hosting capacity analysis under N-1 security constraints to
-      identify the bottlenecks, and on joint transmission-and-generation
-      expansion models that consider data center growth from the start. I find
-      this an exciting area to be working in, and there is still much I want
-      to learn.
+      them, and what new transmission or generation needs to be built? I have
+      been working on hosting capacity analysis under progressively higher-fidelity
+      security models (from OPF through N-1 SCUC), finding that omitting N-1
+      contingency constraints can overestimate bus-level hosting capacity by
+      roughly 20%. On the expansion planning side, our co-optimized
+      generation-and-transmission model with embedded unit commitment shows that
+      data center load can fundamentally reshape optimal investment decisions,
+      in some cases substituting strategically sited generation for transmission
+      reinforcement entirely.
     </p>
   </section>
 
@@ -412,6 +417,48 @@
     <h2>Publications</h2>
 
     <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:0; margin-bottom:6px; font-weight:400;">
+      Under Review
+    </h2>
+
+    <div class="pub">
+      <div class="ptitle">
+        Impact of Security Modeling Fidelity on Hyperscale Data Center
+        Interconnection Capacity Assessment
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span>,
+        Linhan Fang,
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>,
+        Jesus Silva-Rodriguez,
+        Jianyi Yang,
+        Jaya Yellajosula,
+        Fan Jiang, and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        Under review, 2026.
+      </div>
+    </div>
+
+    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
+      Submitted
+    </h2>
+
+    <div class="pub">
+      <div class="ptitle">
+        Impact of Data Center Load on Co-Optimized Generation and Transmission
+        Expansion Planning with Embedded Unit Commitment
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span> and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        Submitted to Hawaii International Conference on System Sciences (HICSS), 2027.
+      </div>
+    </div>
+
+    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
       Accepted
     </h2>
 
@@ -427,6 +474,7 @@
       <div class="pvenue">
         IEEE Industry Applications Society (IAS) Annual Meeting, 2026.
       </div>
+      <a class="ptag" href="https://arxiv.org/abs/2605.18517">arXiv:2605.18517</a>
     </div>
 
     <div class="pub">
@@ -442,39 +490,6 @@
         IEEE PES General Meeting (PESGM), 2026.
       </div>
       <a class="ptag" href="https://arxiv.org/abs/2511.08759">arXiv:2511.08759</a>
-    </div>
-
-    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
-      In Preparation
-    </h2>
-
-    <div class="pub">
-      <div class="ptitle">
-        Contingency-Constrained Hosting Capacity Assessment for Large-Load
-        Interconnection on the IEEE 24-Bus System
-      </div>
-      <div class="pauthors">
-        <span class="me">Haoxiang Wan</span>,
-        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>, and
-        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
-      </div>
-      <div class="pvenue">
-        In preparation, 2026.
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="ptitle">
-        Co-optimization of Transmission and Generation Expansion Planning with
-        Embedded Unit Commitment under Data Center Load Growth
-      </div>
-      <div class="pauthors">
-        <span class="me">Haoxiang Wan</span> and
-        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
-      </div>
-      <div class="pvenue">
-        In preparation, 2026.
-      </div>
     </div>
   </section>
 
@@ -492,9 +507,13 @@
       <div class="note">
         Supervisor:
         <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>.
-        Modeling large-scale data center load integration on the ERCOT
-        transmission network; developing optimization frameworks to assess
-        hosting capacity for hyperscale data center deployment in Texas.
+        Integrating and benchmarking GPU-accelerated optimization solvers
+        (NVIDIA cuOpt, MadNLP) within the
+        <a href="https://www.anl.gov/esia/a-leaf">A-LEAF</a> power-system
+        planning framework; conducting hosting capacity analysis and
+        co-optimized generation and transmission expansion planning to
+        evaluate grid impacts of hyperscale data center deployment on the
+        ERCOT transmission network.
       </div>
     </div>
 
@@ -508,9 +527,11 @@
       <div class="note">
         Advisor: <a href="https://rpglab.github.io/people/Xingpeng-Li/">Prof. Xingpeng Li</a>.
         Developing SCUC models that integrate spatial and temporal data center
-        load flexibility; contingency-constrained hosting capacity analysis on
-        IEEE test systems; machine-learning models for LMP and congestion
-        forecasting in collaboration with Dow.
+        load flexibility; contingency-constrained hosting capacity analysis
+        under four models of increasing fidelity on IEEE test systems;
+        co-optimized generation and transmission expansion planning with
+        embedded unit commitment; machine-learning models for LMP and
+        congestion forecasting in collaboration with Dow.
       </div>
     </div>
 
@@ -599,11 +620,11 @@
 
     <h2 style="margin-top:40px;">Technical Skills</h2>
     <ul class="skills">
-      <li><span class="k">Programming</span><span class="v">Python, MATLAB, C, C++</span></li>
-      <li><span class="k">Optimization</span><span class="v">Pyomo, AMPL, Gurobi</span></li>
+      <li><span class="k">Programming</span><span class="v">Python, Julia, MATLAB, C, C++</span></li>
+      <li><span class="k">Optimization</span><span class="v">Pyomo, JuMP, AMPL, Gurobi, CPLEX</span></li>
       <li><span class="k">Power System Tools</span><span class="v">MATLAB / Simulink, LTspice</span></li>
       <li><span class="k">Machine Learning</span><span class="v">PyTorch, scikit-learn, pandas, NumPy</span></li>
-      <li><span class="k">Other</span><span class="v">LaTeX, Linux / HPC</span></li>
+      <li><span class="k">Other</span><span class="v">LaTeX, Git, Linux / HPC, GPU computing (CUDA)</span></li>
       <li><span class="k">Languages</span><span class="v">English (fluent), Mandarin Chinese (native)</span></li>
     </ul>
 
@@ -676,7 +697,7 @@
 
   <footer>
     <span>© Haoxiang Wan</span>
-    <span>Last updated May 2026</span>
+    <span>Last updated June 2026</span>
   </footer>
 
 </div>
