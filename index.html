@@ -197,6 +197,14 @@
     font-style: italic;
     font-size: 14.5px;
   }
+  .pub .pdesc{
+    color: var(--ink-soft);
+    font-size: 14.5px;
+    line-height: 1.5;
+    margin-top: 8px;
+    padding-left: 12px;
+    border-left: 2px solid rgba(138, 51, 36, 0.25);
+  }
   .pub .ptag{
     display: inline-block;
     font-family: 'Inter', sans-serif;
@@ -372,8 +380,8 @@
       <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>
       and
       <a href="https://www.anl.gov/profile/seolhee-cho">Dr. Seolhee Cho</a>
-      on GPU-accelerated power system optimization and large-scale data center
-      integration studies on the ERCOT network.
+      on GPU-accelerated power system optimization and risk-aware planning for
+      large-scale data center integration on the ERCOT network.
     </p>
   </section>
 
@@ -412,6 +420,30 @@
       in some cases substituting strategically sited generation for transmission
       reinforcement entirely.
     </p>
+    <p>
+      A natural next question is what happens once we admit that we do not
+      actually know how this new demand will arrive. Planning models usually
+      assume a single forecast of how much data center load is coming and where
+      it will connect, yet real build-outs are far less certain: an announced
+      project may be completed at full size, scaled back, delayed by years, or
+      relocated entirely, and each path implies a different grid. In recent work
+      with collaborators at
+      <a href="https://www.anl.gov/">Argonne National Laboratory</a>, I have
+      been exploring the idea that the dominant planning risk here is not
+      <em>aggregate scarcity</em>, whether the system has enough capacity
+      overall, but <em>deployment uncertainty</em>, precisely where and when
+      that capacity turns out to be needed. We built a GPU-accelerated Monte
+      Carlo framework that samples many plausible data center build-outs across
+      the Texas grid and evaluates candidate generation portfolios against the
+      whole distribution of outcomes rather than a single expected case.
+      Planning this way is meaningfully more robust: committing to the expected
+      scenario alone ends up costing several percent more on average, and far
+      more in the unlucky tail, than a portfolio chosen with the full spread in
+      view. Because evaluating thousands of scenarios at this scale would be
+      hopeless on conventional solvers, the study leans on GPU acceleration,
+      which shortens each large-scale run by close to an order of magnitude and
+      makes the whole sweep tractable.
+    </p>
   </section>
 
   <!-- ============ PUBLICATIONS ============ -->
@@ -419,45 +451,22 @@
     <h2>Publications</h2>
 
     <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:0; margin-bottom:6px; font-weight:400;">
-      Under Review
+      Published
     </h2>
 
     <div class="pub">
       <div class="ptitle">
-        Impact of Security Modeling Fidelity on Hyperscale Data Center
-        Interconnection Capacity Assessment
+        Service-Aware Hosting Capacity Assessment of Edge Data Centers
+        with Workload Flexibility
       </div>
       <div class="pauthors">
-        <span class="me">Haoxiang Wan</span>,
         <a href="https://rpglab.github.io/people/Linhan-Fang/">Linhan Fang</a>,
-        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>,
-        <a href="https://rpglab.github.io/people/Jesus-SilvaRodriguez/">Jesus Silva-Rodriguez</a>,
-        <a href="https://www.uh.edu/nsm/computer-science/people/faculty/profiles/jianyiyang.php">Jianyi Yang</a>,
-        Jaya Yellajosula,
-        <a href="https://rpglab.github.io/people/Fan-Jiang/">Fan Jiang</a>, and
+        <span class="me">Haoxiang Wan</span>,
+        Anurag Srivastava, and
         <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
       </div>
       <div class="pvenue">
-        Under review, 2026.
-      </div>
-    </div>
-
-    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
-      Submitted
-    </h2>
-
-    <div class="pub">
-      <div class="ptitle">
-        Impact of Data Center Load on Co-Optimized Generation and Transmission
-        Expansion Planning with Embedded Unit Commitment
-      </div>
-      <div class="pauthors">
-        <span class="me">Haoxiang Wan</span>,
-        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>, and
-        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>
-      </div>
-      <div class="pvenue">
-        Submitted to Hawaii International Conference on System Sciences (HICSS), 2027.
+        IEEE PES Grid Edge Technologies Conference &amp; Exposition, 2025.
       </div>
     </div>
 
@@ -494,6 +503,72 @@
       </div>
       <a class="ptag" href="https://arxiv.org/abs/2511.08759">arXiv:2511.08759</a>
     </div>
+
+    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
+      Under Review
+    </h2>
+
+    <div class="pub">
+      <div class="ptitle">
+        Impact of Security Modeling Fidelity on Hyperscale Data Center
+        Hosting Capacity Assessment
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span>,
+        <a href="https://rpglab.github.io/people/Linhan-Fang/">Linhan Fang</a>,
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>,
+        <a href="https://rpglab.github.io/people/Jesus-SilvaRodriguez/">Jesus Silva-Rodriguez</a>,
+        <a href="https://www.uh.edu/nsm/computer-science/people/faculty/profiles/jianyiyang.php">Jianyi Yang</a>,
+        Jaya Yellajosula,
+        <a href="https://rpglab.github.io/people/Fan-Jiang/">Fan Jiang</a>, and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        Submitted to IEEE PES Grid Edge Technologies Conference &amp; Exposition, 2027.
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="ptitle">
+        Impact of Data Center Load on Co-Optimized Generation and Transmission
+        Expansion Planning with Embedded Unit Commitment
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span>,
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>, and
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>
+      </div>
+      <div class="pvenue">
+        Submitted to Hawaii International Conference on System Sciences (HICSS), 2027.
+      </div>
+    </div>
+
+    <h2 style="font-size:16px; color:#888; font-style:italic; margin-top:32px; margin-bottom:6px; font-weight:400;">
+      In Preparation
+    </h2>
+
+    <div class="pub">
+      <div class="ptitle">
+        Deployment Uncertainty, Not Aggregate Scarcity: A GPU-Accelerated
+        Monte Carlo Framework for Risk-Aware Generation Expansion Planning
+      </div>
+      <div class="pauthors">
+        <span class="me">Haoxiang Wan</span>,
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>,
+        <a href="https://www.anl.gov/profile/seolhee-cho">Seolhee Cho</a>,
+        <a href="https://www.anl.gov/profile/todd-levin">Todd Levin</a>, and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
+      </div>
+      <div class="pvenue">
+        In preparation, 2026.
+      </div>
+      <div class="pdesc">
+        Reframes the planning risk from large-scale data center growth as one of
+        <em>where and when</em> capacity is deployed rather than aggregate
+        capacity shortfall, using a GPU-accelerated Monte Carlo framework to
+        select risk-aware generation portfolios on a Texas 2030 case study.
+      </div>
+    </div>
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
@@ -513,7 +588,9 @@
         Integrating and benchmarking GPU-accelerated optimization solvers
         (NVIDIA cuOpt, MadNLP) within the
         <a href="https://www.anl.gov/esia/a-leaf">A-LEAF</a> power-system
-        planning framework; conducting hosting capacity analysis and
+        planning framework; developing a GPU-accelerated Monte Carlo framework
+        for risk-aware generation expansion planning under data center
+        deployment uncertainty; conducting hosting capacity analysis and
         co-optimized generation and transmission expansion planning to
         evaluate grid impacts of hyperscale data center deployment on the
         ERCOT transmission network.
@@ -696,7 +773,7 @@
 
   <footer>
     <span>© Haoxiang Wan</span>
-    <span>Last updated June 2026</span>
+    <span>Last updated July 2026</span>
   </footer>
 
 </div>
