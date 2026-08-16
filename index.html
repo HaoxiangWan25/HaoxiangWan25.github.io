@@ -390,12 +390,13 @@
     <h2>Research</h2>
     <p>
       The power grid was not built with data centers like today's in mind.
-      Driven by AI, a single new facility can draw hundreds of megawatts,
-      comparable to a small city, and many are being planned faster than
-      transmission lines can be built to serve them. My work asks a simple
-      question: instead of treating these loads as a fixed burden, can we
-      take advantage of the fact that computational work is, in many ways,
-      flexible, and use that flexibility to help the grid run better?
+      Driven by AI, a single new facility can place hundreds of megawatts, and
+      sometimes several gigawatts, at one point of interconnection, and many
+      are being planned faster than transmission lines can be built to serve
+      them. My work asks a simple question: instead of treating these loads as
+      a fixed burden, can we take advantage of the fact that computational
+      work is, in many ways, flexible, and use that flexibility to help the
+      grid run better?
     </p>
     <p>
       A lot of computing tasks do not strictly need to happen at a specific
@@ -423,26 +424,27 @@
     <p>
       A natural next question is what happens once we admit that we do not
       actually know how this new demand will arrive. Planning models usually
-      assume a single forecast of how much data center load is coming and where
-      it will connect, yet real build-outs are far less certain: an announced
-      project may be completed at full size, scaled back, delayed by years, or
-      relocated entirely, and each path implies a different grid. In recent work
+      collapse it into a single load forecast, yet real build-outs are far
+      less certain: an announced project may energize at full size, be scaled
+      back, delayed, or never proceed, and each combination of outcomes puts
+      gigawatt-scale loads in different places on the network. In recent work
       with collaborators at
-      <a href="https://www.anl.gov/">Argonne National Laboratory</a>, I have
-      been exploring the idea that the dominant planning risk here is not
-      <em>aggregate scarcity</em>, whether the system has enough capacity
-      overall, but <em>deployment uncertainty</em>, precisely where and when
-      that capacity turns out to be needed. We built a GPU-accelerated Monte
-      Carlo framework that samples many plausible data center build-outs across
-      the Texas grid and evaluates candidate generation portfolios against the
-      whole distribution of outcomes rather than a single expected case.
-      Planning this way is meaningfully more robust: committing to the expected
-      scenario alone ends up costing several percent more on average, and far
-      more in the unlucky tail, than a portfolio chosen with the full spread in
-      view. Because evaluating thousands of scenarios at this scale would be
-      hopeless on conventional solvers, the study leans on GPU acceleration,
-      which shortens each large-scale run by close to an order of magnitude and
-      makes the whole sweep tractable.
+      <a href="https://www.anl.gov/">Argonne National Laboratory</a>, we built
+      a Monte Carlo cross-stress framework that samples 30 plausible
+      deployment futures from 51 proposed projects across the Texas grid,
+      designs one expansion portfolio for each, and then operates every fixed
+      portfolio under every future at full-year, county-level network
+      resolution. What separates good portfolios from bad ones turns out to be
+      spatial: where the realized load lands relative to the deployment a
+      portfolio was designed for explains most of the undelivered energy,
+      while total build capacity explains almost none. Planning against the
+      average deployment costs about 24% more in expectation than selecting a
+      portfolio across the sampled futures, and the gap widens sharply in the
+      adverse tail; no single portfolio minimizes both expected cost and tail
+      risk, so that trade-off has to be priced explicitly. The study rests on
+      1,161 full-year linear programs, each retaining all 8,760 hours, which
+      was only practical because GPU-based first-order solvers cut a full-year
+      expansion solve from about 25 hours on CPU to under two hours.
     </p>
   </section>
 
@@ -535,8 +537,8 @@
       </div>
       <div class="pauthors">
         <span class="me">Haoxiang Wan</span>,
-        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>, and
-        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>
+        <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>, and
+        <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
       </div>
       <div class="pvenue">
         Submitted to Hawaii International Conference on System Sciences (HICSS), 2027.
@@ -549,24 +551,27 @@
 
     <div class="pub">
       <div class="ptitle">
-        Deployment Uncertainty, Not Aggregate Scarcity: A GPU-Accelerated
-        Monte Carlo Framework for Risk-Aware Generation Expansion Planning
+        Risk-Aware Selection of Generation Expansion Portfolios under Uncertain
+        Data-Center Deployment: A Full-Year Cross-Stress Framework
       </div>
       <div class="pauthors">
         <span class="me">Haoxiang Wan</span>,
         <a href="https://www.anl.gov/profile/jonghwan-kwon">Jonghwan Kwon</a>,
         <a href="https://www.anl.gov/profile/seolhee-cho">Seolhee Cho</a>,
+        Sunash B. Sharma,
         <a href="https://www.anl.gov/profile/todd-levin">Todd Levin</a>, and
         <a href="https://rpglab.github.io/people/Xingpeng-Li/">Xingpeng Li</a>
       </div>
       <div class="pvenue">
-        In preparation, 2026.
+        In preparation for Applied Energy, 2026.
       </div>
       <div class="pdesc">
-        Reframes the planning risk from large-scale data center growth as one of
-        <em>where and when</em> capacity is deployed rather than aggregate
-        capacity shortfall, using a GPU-accelerated Monte Carlo framework to
-        select risk-aware generation portfolios on a Texas 2030 case study.
+        Stress-tests generation expansion portfolios designed for one data
+        center deployment future against alternative futures at full-year,
+        network-constrained resolution on a Texas 2030 case, showing that
+        siting mismatch, rather than build scale, drives undelivered load,
+        and that scenario-based portfolio selection substantially outperforms
+        planning to the average deployment in both expected cost and tail risk.
       </div>
     </div>
   </section>
@@ -586,9 +591,9 @@
         Supervisor:
         <a href="https://www.anl.gov/profile/jonghwan-kwon">Dr. Jonghwan Kwon</a>.
         Integrating and benchmarking GPU-accelerated optimization solvers
-        (NVIDIA cuOpt, MadNLP) within the
+        (NVIDIA cuOpt/PDLP, MadNLP) within the
         <a href="https://www.anl.gov/esia/a-leaf">A-LEAF</a> power-system
-        planning framework; developing a GPU-accelerated Monte Carlo framework
+        planning framework; developing a Monte Carlo cross-stress framework
         for risk-aware generation expansion planning under data center
         deployment uncertainty; conducting hosting capacity analysis and
         co-optimized generation and transmission expansion planning to
@@ -701,10 +706,10 @@
     <h2 style="margin-top:40px;">Technical Skills</h2>
     <ul class="skills">
       <li><span class="k">Programming</span><span class="v">Python, Julia, MATLAB, C, C++</span></li>
-      <li><span class="k">Optimization</span><span class="v">Pyomo, JuMP, AMPL, Gurobi, CPLEX</span></li>
-      <li><span class="k">Power System Tools</span><span class="v">MATLAB / Simulink, LTspice</span></li>
+      <li><span class="k">Optimization</span><span class="v">Pyomo, JuMP, AMPL, Gurobi, CPLEX, NVIDIA cuOpt/PDLP, MadNLP</span></li>
+      <li><span class="k">Power System Tools</span><span class="v">A-LEAF, MATLAB / Simulink, LTspice</span></li>
       <li><span class="k">Machine Learning</span><span class="v">PyTorch, scikit-learn, pandas, NumPy</span></li>
-      <li><span class="k">Other</span><span class="v">LaTeX, Git, Linux / HPC, GPU computing (CUDA)</span></li>
+      <li><span class="k">Other</span><span class="v">LaTeX, Git, Linux / HPC (Slurm, PBS), GPU computing (CUDA)</span></li>
       <li><span class="k">Languages</span><span class="v">English (fluent), Mandarin Chinese (native)</span></li>
     </ul>
 
@@ -773,7 +778,7 @@
 
   <footer>
     <span>© Haoxiang Wan</span>
-    <span>Last updated July 2026</span>
+    <span>Last updated August 2026</span>
   </footer>
 
 </div>
