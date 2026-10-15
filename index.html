@@ -40,6 +40,7 @@
   a:hover{ border-bottom-color: var(--accent); }
 
   strong{ color: var(--ink); font-weight: 600; }
+  p.funfact{ font-size: 15.5px; color: var(--ink-mute); }
 
   /* ===== Header ===== */
   header.site{ margin-bottom: 44px; }
@@ -49,12 +50,7 @@
     margin: 0;
     letter-spacing: -0.01em;
   }
-  header.site .han{
-    color: var(--ink-mute);
-    font-size: 16px;
-    font-style: italic;
-    margin: 2px 0 14px;
-  }
+  header.site .name + .role{ margin-top: 12px; }
   header.site .role{
     color: var(--ink-soft);
     font-size: 16px;
@@ -239,7 +235,6 @@
   <!-- ============ HEADER ============ -->
   <header class="site">
     <h1 class="name">Haoxiang Wan</h1>
-    <div class="han">万浩翔</div>
     <div class="role">
       Ph.D. candidate, Electrical and Computer Engineering<br>
       <a href="https://rpglab.github.io/">Renewable Power Grid Lab</a>,
@@ -270,6 +265,14 @@
       and my bachelor's degree in Electrical and Electronic Engineering with
       First Class Honours from the
       <a href="https://www.sheffield.ac.uk/">University of Sheffield</a>, UK.
+    </p>
+    <p class="funfact">
+      <em>Fun fact:</em> in the
+      <a href="https://www.ucl.ac.uk/study/current-students/certificates-and-results/uk-honours-degree-system-undergraduates">UK
+      honours system</a>, undergraduate degrees are sorted into classes: a
+      First, a 2:1, a 2:2 and a Third. Which is why British graduates
+      sometimes talk about their degrees the way they talk about train
+      tickets.
     </p>
     <p>
       My research lies at the intersection of <strong>power system optimization</strong>
